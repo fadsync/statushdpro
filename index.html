@@ -1,63 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StatusHD Pro - Download Update</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StatusHD Pro - Update Available</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #020617;
-      color: #f1f5f9;
-      display: flex;
-      justify-content: center;
       padding: 20px;
+      background-color: #020617;
+      font-family: Arial, sans-serif;
+      color: #e2e8f0;
+      text-align: center;
     }
 
     .container {
-      text-align: center;
       max-width: 420px;
-      width: 100%;
+      margin: auto;
     }
 
-    .circle {
-      width: 130px;
-      height: 130px;
-      margin: 40px auto 20px auto;
+    .logo-circle {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: linear-gradient(135deg, #3b82f6, #10b981);
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto 20px;
+      box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
     }
 
-    .circle-icon {
-      font-size: 60px;
+    .logo-circle img {
+      width: 85px;
+      height: 85px;
+      filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.4));
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
       color: white;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      opacity: 0.8;
+      margin-bottom: 25px;
+      line-height: 1.5;
     }
 
     .card {
       background-color: #0f172a;
       padding: 20px;
       border-radius: 20px;
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 28px;
       margin-top: 20px;
+      box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.35);
     }
 
     .download-btn {
-      margin-top: 28px;
-      background: linear-gradient(135deg, #3b82f6, #10b981);
-      padding: 14px 24px;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-decoration: none;
+      margin-top: 25px;
       display: inline-block;
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 20px;
+      padding: 15px 28px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+      transition: 0.2s;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
     }
 
     .footer {
@@ -69,33 +88,42 @@
 </head>
 
 <body>
+
   <div class="container">
-    <div class="circle">
-      <span class="circle-icon">⬇️</span>
+
+    <div class="logo-circle">
+      <!-- You can replace with your app icon later -->
+      <img src="https://cdn-icons-png.flaticon.com/512/109/109612.png">
     </div>
 
-    <h2>StatusHD Pro Update</h2>
-    <p style="opacity: 0.8;">
-      A new version of StatusHD Pro is available.  
-      Download the latest update to continue using the app.
-    </p>
+    <div class="title">StatusHD Pro Update</div>
+
+    <div class="subtitle">
+      A new version of StatusHD Pro is available.<br>
+      Please install the update to continue enjoying HD-quality status uploads.
+    </div>
 
     <div class="card">
-      <p style="font-size: 14px; opacity: 0.8;">
-        Tap the button below to download the latest APK file.
+      <p style="opacity: 0.8;">
+        Tap the button below to download the latest APK version.
       </p>
     </div>
 
-    <!-- 🔥 CHANGE THIS LINK later when your APK is uploaded -->
-    <a class="download-btn" href="#" id="downloadLink">Download Update</a>
+    <a id="downloadLink" class="download-btn" href="#" download>
+      ⬇ Download Update
+    </a>
 
     <div class="footer">Developed by FadSync</div>
+
   </div>
 
   <script>
-    // Will update this when you upload APK
-    document.getElementById("downloadLink").href =
-      "https://your-apk-link-here.com/app.apk";
+    // ⭐ UPDATE ONLY THIS VARIABLE ⭐
+    const APK_URL = "https://your-apk-link-here.com/app.apk";
+
+    document.getElementById("downloadLink").href = APK_URL;
   </script>
+
 </body>
+
 </html>
