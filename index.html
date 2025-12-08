@@ -6,146 +6,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StatusHD Pro - Update Required</title>
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome for the download icon -->
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5; /* Soft grey-white background */
+      padding: 24px;
+      background-color: #f3f4f6; /* light grey background */
       font-family: Arial, sans-serif;
       color: #111827;
       display: flex;
       justify-content: center;
-      padding: 24px;
     }
 
     .container {
       max-width: 480px;
       width: 100%;
-      background: #ffffff;
-      padding: 24px;
+      background-color: #ffffff; /* white card */
       border-radius: 18px;
-      box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+      padding: 24px 20px 26px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background-color: #e5e7eb; /* light grey pill */
+      font-size: 11px;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      margin-right: 6px;
     }
 
     .logo-circle {
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       background: linear-gradient(135deg, #3b82f6, #10b981);
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin: 0 auto 20px auto;
-      box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.15);
+      justify-content: center;
+      margin: 0 auto 16px auto;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
     }
 
     .logo-circle i {
-      font-size: 64px;
-      color: white;
+      font-size: 52px;
+      color: #ffffff;
     }
 
     .title {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 700;
-      text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       color: #111827;
     }
 
     .subtitle {
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 14px;
       color: #4b5563;
-      margin-bottom: 20px;
+      line-height: 1.6;
+      margin-bottom: 18px;
     }
 
     .grey-card {
-      background: #f9fafb;
+      background-color: #f9fafb;
       border-radius: 14px;
-      padding: 18px 20px;
+      padding: 16px 18px;
       border: 1px solid #e5e7eb;
-      margin-bottom: 24px;
-      text-align: center;
-      color: #374151;
-      font-size: 14px;
+      font-size: 13px;
+      color: #4b5563;
       line-height: 1.5;
+      margin-bottom: 22px;
     }
 
     .download-btn {
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       align-items: center;
-      margin: 0 auto;
-      padding: 14px 28px;
-      width: fit-content;
-      background: linear-gradient(135deg, #3b82f6, #10b981);
-      color: white;
-      font-size: 17px;
-      font-weight: 600;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
       border-radius: 12px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0px 8px 24px rgba(59, 130, 246, 0.35);
-      transition: transform 0.15s ease;
+      box-shadow: 0 10px 26px rgba(59, 130, 246, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
     }
 
     .download-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .download-btn i {
-      margin-right: 8px;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(59, 130, 246, 0.45);
     }
 
     .footer {
-      text-align: center;
-      margin-top: 28px;
-      font-size: 12px;
-      color: #6b7280;
+      margin-top: 20px;
+      font-size: 11px;
+      color: #9ca3af;
     }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
+    <div class="chip">
+      <div class="chip-dot"></div>
+      <span>StatusHD Pro • Update channel</span>
+    </div>
+
     <div class="logo-circle">
-      <i class="fa-solid fa-download"></i>
+      <i class="fa-solid fa-cloud-arrow-down"></i>
     </div>
 
     <div class="title">StatusHD Pro Update</div>
 
     <div class="subtitle">
-      A new update is available for StatusHD Pro.<br>
-      Install the latest version to continue using all features.
+      A newer version of StatusHD Pro is available.<br />
+      Please install the latest build to continue using all features.
     </div>
 
     <div class="grey-card">
-      This update improves performance, reliability,<br>
-      and HD-quality status uploads.
+      This update improves HD quality, stability and processing speed for your WhatsApp status videos.
     </div>
 
     <a id="downloadLink" class="download-btn" href="#" download>
-      <i class="fa-solid fa-cloud-arrow-down"></i>
-      Download Update
+      <i class="fa-solid fa-download"></i>
+      <span>Download Update</span>
     </a>
 
-    <div class="footer">Developed by FadSync — StatusHD Pro</div>
+    <div class="footer">
+      Developed by FadSync • StatusHD Pro
+    </div>
 
   </div>
 
-  <!-- Load APK URL -->
+  <!-- Load APK_URL from config.js -->
   <script src="config.js"></script>
   <script>
-    document.getElementById("downloadLink").href = APK_URL;
+    // Apply dynamic URL from the repo-level config file
+    if (typeof APK_URL === "string" && APK_URL.length > 0) {
+      document.getElementById("downloadLink").href = APK_URL;
+    }
   </script>
-
 </body>
 
 </html>
