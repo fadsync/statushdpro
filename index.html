@@ -1,34 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StatusHD Pro - Update Required</title>
 
-  <!-- Font Awesome for the download icon -->
+  <title>StatusHD Pro – AI HD WhatsApp Status Enhancer</title>
+
+  <!-- SEO -->
+  <meta name="description"
+        content="StatusHD Pro is an AI-powered tool that enhances and optimizes videos and images for crystal-clear, HD WhatsApp Status uploads without quality loss." />
+  <meta name="keywords"
+        content="StatusHD Pro, HD WhatsApp Status, WhatsApp status quality, AI video enhancer, AI image enhancer, video to status, status compressor, HD status tool, blur-free status, WhatsApp video quality" />
+  <meta name="author" content="FadSync (Abdul Wahab)" />
+  <meta property="og:title" content="StatusHD Pro – AI HD WhatsApp Status Enhancer" />
+  <meta property="og:description"
+        content="Turn any video or image into a high-quality WhatsApp Status using StatusHD Pro’s advanced AI engine. No more blurry or pixelated uploads." />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
-    body {
-      margin: 0;
-      padding: 24px;
-      background-color: #f3f4f6; /* light grey background */
-      font-family: Arial, sans-serif;
-      color: #111827;
-      display: flex;
-      justify-content: center;
+    :root {
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --muted-bg: #f9fafb;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+      --brand-blue: #3b82f6;
+      --brand-green: #10b981;
     }
 
-    .container {
-      max-width: 480px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background-color: transparent;
+      padding: 16px 20px;
+    }
+
+    .nav-container {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 19px;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28);
+      color: #fff;
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      background-color: #ffffff; /* white card */
-      border-radius: 18px;
-      padding: 24px 20px 26px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-      text-align: center;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+    }
+
+    /* MAIN WRAPPER */
+    .page {
+      max-width: 980px;
+      margin: 0 auto 40px;
+      padding: 8px 20px 32px;
+    }
+
+    .hero {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-card {
+      background-color: var(--card-bg);
+      border-radius: 24px;
+      padding: 24px 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
     }
 
     .chip {
@@ -36,133 +141,425 @@
       align-items: center;
       padding: 6px 12px;
       border-radius: 999px;
-      background-color: #e5e7eb; /* light grey pill */
+      background-color: #e5e7eb;
       font-size: 11px;
       color: #4b5563;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      gap: 6px;
     }
 
     .chip-dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #3b82f6, #10b981);
-      margin-right: 6px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
     }
 
-    .logo-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #3b82f6, #10b981);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px auto;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
-    }
-
-    .logo-circle i {
-      font-size: 52px;
-      color: #ffffff;
-    }
-
-    .title {
-      font-size: 22px;
-      font-weight: 700;
+    .hero-title {
+      font-size: 26px;
+      font-weight: 750;
       margin-bottom: 8px;
-      color: #111827;
     }
 
-    .subtitle {
+    .hero-subtitle {
       font-size: 14px;
-      color: #4b5563;
+      color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 18px;
     }
 
-    .grey-card {
-      background-color: #f9fafb;
-      border-radius: 14px;
-      padding: 16px 18px;
-      border: 1px solid #e5e7eb;
-      font-size: 13px;
-      color: #4b5563;
-      line-height: 1.5;
-      margin-bottom: 22px;
+    .hero-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
-    .download-btn {
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hero-bullets i {
+      margin-top: 3px;
+      color: var(--brand-green);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 26px;
+      padding: 11px 24px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #3b82f6, #10b981);
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       text-decoration: none;
       box-shadow: 0 10px 26px rgba(59, 130, 246, 0.35);
       transition: transform 0.12s ease, box-shadow 0.12s ease;
     }
 
-    .download-btn:hover {
+    .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 14px 34px rgba(59, 130, 246, 0.45);
     }
 
-    .footer {
-      margin-top: 20px;
+    .btn-ghost {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-side-card {
+      background-color: var(--card-bg);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero-side-card .logo-circle {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
+      color: #fff;
+      font-size: 38px;
+    }
+
+    .hero-side-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background-color: var(--card-bg);
+      border-radius: 18px;
+      padding: 16px 16px 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .feature-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .muted-card {
+      background-color: var(--muted-bg);
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 16px 20px 22px;
+      background-color: #f9fafb;
       font-size: 11px;
       color: #9ca3af;
     }
+
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+    }
   </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <div class="chip">
-      <div class="chip-dot"></div>
-      <span>StatusHD Pro • Update channel</span>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-play"></i>
+        </div>
+        <span>StatusHD Pro</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="updates.html">Updates</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="logo-circle">
-      <i class="fa-solid fa-cloud-arrow-down"></i>
+  <!-- MAIN PAGE -->
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="chip">
+          <div class="chip-dot"></div>
+          <span>AI-powered HD WhatsApp Status optimizer</span>
+        </div>
+
+        <h1 class="hero-title">
+          Turn any video or image into crystal-clear WhatsApp Status.
+        </h1>
+
+        <p class="hero-subtitle">
+          StatusHD Pro uses an advanced AI enhancement engine built by
+          <strong>FadSync</strong> to keep your WhatsApp Status uploads
+          sharp, smooth and blur-free – even after compression.
+        </p>
+
+        <ul class="hero-bullets">
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <span>Preserves details, colors and sharpness for HD WhatsApp Status uploads.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <span>Smart optimization: fits WhatsApp limits without sacrificing visual quality.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <span>Works with both <strong>videos</strong> and <strong>images</strong> – no account required.</span>
+          </li>
+        </ul>
+
+        <div class="button-row">
+          <a id="downloadButton" class="btn-primary" href="#" download>
+            <i class="fa-solid fa-download"></i>
+            <span>Download latest APK</span>
+          </a>
+          <span class="btn-ghost">
+            Direct APK from official StatusHD Pro update channel.
+          </span>
+        </div>
+      </div>
+
+      <aside class="hero-side-card">
+        <div class="logo-circle">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <p class="hero-side-text">
+          Built for creators, businesses and anyone who cares about quality.
+          StatusHD Pro intelligently cleans noise, sharpens details and optimizes bitrate so your
+          WhatsApp Status always looks professional.
+        </p>
+        <p class="hero-side-text" style="font-size:12px; margin-top:8px;">
+          Developed by <strong>FadSync (Abdul Wahab)</strong>.
+        </p>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <h2 class="section-title">Why StatusHD Pro?</h2>
+      <div class="cards-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div class="feature-title">HD WhatsApp Status quality</div>
+          StatusHD Pro is optimized for WhatsApp Status. It respects WhatsApp’s limits
+          while preserving as much detail, sharpness and smooth motion as possible.
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="feature-title">AI enhancement engine</div>
+          Our custom engine analyzes each frame to balance bitrate, resolution and
+          noise-reduction, making your videos look naturally crisp instead of over-compressed.
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-image"></i>
+          </div>
+          <div class="feature-title">Image to HD Status</div>
+          Turn high-resolution photos into short, high-quality WhatsApp Status videos
+          with smooth transitions and clean edges, ready to share in seconds.
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="feature-title">Smart cleaning & sharpening</div>
+          Advanced filters lightly clean noise and enhance micro-details so your
+          footage stays punchy and clear, without looking artificial.
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="feature-title">No account, no signup</div>
+          StatusHD Pro works fully on-device. There is no login screen and we do not
+          require personal account creation to enhance your media.
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="feature-title">Fast & creator-ready</div>
+          The app is tuned for speed on modern Android devices so you can batch-prepare
+          content and post multiple HD Status updates quickly.
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2 class="section-title">How it works</h2>
+      <div class="muted-card">
+        <ol style="margin:0; padding-left:18px; font-size:13px;">
+          <li>Open the StatusHD Pro app on your Android device.</li>
+          <li>Select a <strong>video</strong> or <strong>image</strong> from your gallery.</li>
+          <li>Our AI engine analyzes and optimizes it for WhatsApp Status limits.</li>
+          <li>Preview the result, then export and share directly to WhatsApp.</li>
+          <li>Enjoy consistently clear, HD-looking Status posts without ugly artifacts.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="muted-card">
+        <div class="faq-item">
+          <div class="faq-q">Does StatusHD Pro require an account?</div>
+          <div class="faq-a">
+            No. There is no signup or login. You install the app, enhance your media and share.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this safe for my WhatsApp account?</div>
+          <div class="faq-a">
+            Yes. StatusHD Pro does not interact with WhatsApp servers or your account.
+            It only processes media files on your device before you upload them normally.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Who created StatusHD Pro?</div>
+          <div class="faq-a">
+            StatusHD Pro is developed by <strong>FadSync (Abdul Wahab)</strong>, focused on high-quality
+            media tools for creators and everyday users.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> StatusHD Pro · Developed by FadSync (Abdul Wahab)
+      </div>
+      <div class="footer-links">
+        <span>Contact: <a href="mailto:help.statushdpro@gmail.com">help.statushdpro@gmail.com</a></span>
+      </div>
     </div>
+  </footer>
 
-    <div class="title">StatusHD Pro Update</div>
-
-    <div class="subtitle">
-      A newer version of StatusHD Pro is available.<br />
-      Please install the latest build to continue using all features.
-    </div>
-
-    <div class="grey-card">
-      This update improves HD quality, stability and processing speed for your WhatsApp status videos.
-    </div>
-
-    <a id="downloadLink" class="download-btn" href="#" download>
-      <i class="fa-solid fa-download"></i>
-      <span>Download Update</span>
-    </a>
-
-    <div class="footer">
-      Developed by FadSync • StatusHD Pro
-    </div>
-
-  </div>
-
-  <!-- Load APK_URL from config.js -->
+  <!-- APK URL loader -->
   <script src="config.js"></script>
   <script>
-    // Apply dynamic URL from the repo-level config file
+    // Bind year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Apply dynamic APK URL to download button if provided
     if (typeof APK_URL === "string" && APK_URL.length > 0) {
-      document.getElementById("downloadLink").href = APK_URL;
+      var btn = document.getElementById("downloadButton");
+      btn.href = APK_URL;
     }
   </script>
 </body>
-
 </html>
